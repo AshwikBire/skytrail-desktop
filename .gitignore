@@ -1,0 +1,10 @@
+.env
+venv/
+__pycache__/
+*.pyc
+*.pyo
+*.log
+*.tmp
+.vscode/
+.idea/
+pyswisseph-*.whl
