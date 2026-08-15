@@ -1,150 +1,136 @@
 """
 Theme Management for SkyTrail Desktop
+Luxury Celestial Theme - Obsidian, Gold & Ivory
 """
 
 THEMES = {
-    "sunset_gold": {
-        "name": "Sunset Gold",
-        "bg": "#1a0a00",
-        "panel_bg": "#2d1500",
-        "cyan": "#FFC850",
-        "cyan_dim": "#e6a800",
-        "amber": "#FFD700",
-        "green": "#69f0ae",
-        "red": "#ff5252",
-        "purple": "#ce93d8",
-        "orange": "#ff8a65",
-        "text": "#fff8e7",
-        "text_secondary": "#f5e6c8",
-        "border": "#e6a800",
-        "hover": "#3d1f00",
-        "glow": "#FFC850",
+    "luxury_celestial": {
+        "name": "Luxury Celestial",
+        # Brand Colors
+        "bg": "#0B0A08",           # Obsidian - Main Background
+        "panel_bg": "#15120D",     # Espresso - Panel Background
+        "cyan": "#D4AF37",         # Royal Gold - Primary Accent
+        "cyan_dim": "#B8962E",     # Darker Gold
+        "amber": "#F4D77B",        # Champagne Gold - Highlights
+        "gold": "#D4AF37",         # Royal Gold
+        "green": "#D4AF37",        # Gold for success states
+        "red": "#8B0000",          # Dark Red for errors
+        "purple": "#B8962E",       # Gold variant
+        "orange": "#F4D77B",       # Champagne Gold
+        "text": "#FFF8E7",         # Ivory - Primary Text
+        "text_secondary": "#B8AE9C", # Warm Gray - Secondary Text
+        "border": "#D4AF37",       # Royal Gold - Borders
+        "hover": "#1D1810",        # Dark Walnut - Hover
+        "glow": "#F4D77B",         # Champagne Gold Glow
+        "accent": "#D4AF37",       # Royal Gold Accents
+        "subtle": "#B8AE9C",       # Warm Gray Subtle
     },
-    "cosmic_purple": {
-        "name": "Cosmic Purple",
-        "bg": "#0a0015",
-        "panel_bg": "#1a0030",
-        "cyan": "#7c4dff",
-        "cyan_dim": "#536dfe",
-        "amber": "#ffd54f",
-        "green": "#69f0ae",
-        "red": "#ff5252",
-        "purple": "#b388ff",
-        "orange": "#ffab40",
-        "text": "#e8eaf6",
-        "text_secondary": "#c5cae9",
-        "border": "#536dfe",
-        "hover": "#2a004a",
-        "glow": "#7c4dff",
+    "obsidian": {
+        "name": "Obsidian",
+        "bg": "#0B0A08",
+        "panel_bg": "#15120D",
+        "cyan": "#D4AF37",
+        "cyan_dim": "#B8962E",
+        "amber": "#F4D77B",
+        "gold": "#D4AF37",
+        "green": "#D4AF37",
+        "red": "#8B0000",
+        "purple": "#B8962E",
+        "orange": "#F4D77B",
+        "text": "#FFF8E7",
+        "text_secondary": "#B8AE9C",
+        "border": "#D4AF37",
+        "hover": "#1D1810",
+        "glow": "#F4D77B",
+        "accent": "#D4AF37",
+        "subtle": "#B8AE9C",
     },
-    "mystic_blue": {
-        "name": "Mystic Blue",
-        "bg": "#050810",
-        "panel_bg": "#0a1628",
-        "cyan": "#46DCFF",
-        "cyan_dim": "#1E7890",
-        "amber": "#FFC850",
-        "green": "#28a745",
-        "red": "#dc3545",
-        "purple": "#9b59b6",
-        "orange": "#e67e22",
-        "text": "#ffffff",
-        "text_secondary": "#cdeeff",
-        "border": "#1E7890",
-        "hover": "#0d2137",
-        "glow": "#46DCFF",
+    "royal_gold": {
+        "name": "Royal Gold",
+        "bg": "#0B0A08",
+        "panel_bg": "#15120D",
+        "cyan": "#F4D77B",
+        "cyan_dim": "#D4AF37",
+        "amber": "#F4D77B",
+        "gold": "#D4AF37",
+        "green": "#F4D77B",
+        "red": "#8B0000",
+        "purple": "#D4AF37",
+        "orange": "#F4D77B",
+        "text": "#FFF8E7",
+        "text_secondary": "#B8AE9C",
+        "border": "#F4D77B",
+        "hover": "#1D1810",
+        "glow": "#F4D77B",
+        "accent": "#F4D77B",
+        "subtle": "#B8AE9C",
     },
-    "stardust_teal": {
-        "name": "Stardust Teal",
-        "bg": "#00100a",
-        "panel_bg": "#001f14",
-        "cyan": "#00e5ff",
-        "cyan_dim": "#00897b",
-        "amber": "#ffd740",
-        "green": "#69f0ae",
-        "red": "#ff5252",
-        "purple": "#80cbc4",
-        "orange": "#ffab40",
-        "text": "#e0f7fa",
-        "text_secondary": "#b2dfdb",
-        "border": "#00897b",
-        "hover": "#002f1f",
-        "glow": "#00e5ff",
+    "ivory": {
+        "name": "Ivory",
+        "bg": "#FFF8E7",
+        "panel_bg": "#F5EDD6",
+        "cyan": "#D4AF37",
+        "cyan_dim": "#B8962E",
+        "amber": "#D4AF37",
+        "gold": "#D4AF37",
+        "green": "#D4AF37",
+        "red": "#8B0000",
+        "purple": "#B8962E",
+        "orange": "#D4AF37",
+        "text": "#0B0A08",
+        "text_secondary": "#B8AE9C",
+        "border": "#D4AF37",
+        "hover": "#E8DFC8",
+        "glow": "#D4AF37",
+        "accent": "#D4AF37",
+        "subtle": "#B8AE9C",
     },
-    "royal_indigo": {
-        "name": "Royal Indigo",
-        "bg": "#0a0015",
-        "panel_bg": "#1a0030",
-        "cyan": "#9c27b0",
-        "cyan_dim": "#6a1b9a",
-        "amber": "#ffd54f",
-        "green": "#69f0ae",
-        "red": "#ff5252",
-        "purple": "#ce93d8",
-        "orange": "#ffab40",
-        "text": "#f3e5f5",
-        "text_secondary": "#e1bee7",
-        "border": "#6a1b9a",
-        "hover": "#2a004a",
-        "glow": "#9c27b0",
+    "dark_walnut": {
+        "name": "Dark Walnut",
+        "bg": "#1D1810",
+        "panel_bg": "#15120D",
+        "cyan": "#F4D77B",
+        "cyan_dim": "#D4AF37",
+        "amber": "#F4D77B",
+        "gold": "#D4AF37",
+        "green": "#D4AF37",
+        "red": "#8B0000",
+        "purple": "#D4AF37",
+        "orange": "#F4D77B",
+        "text": "#FFF8E7",
+        "text_secondary": "#B8AE9C",
+        "border": "#D4AF37",
+        "hover": "#0B0A08",
+        "glow": "#F4D77B",
+        "accent": "#D4AF37",
+        "subtle": "#B8AE9C",
     },
-    "dark": {
-        "name": "Dark",
-        "bg": "#050810",
-        "panel_bg": "#0a1220",
-        "cyan": "#46DCFF",
-        "cyan_dim": "#1E7890",
-        "amber": "#FFC850",
-        "green": "#28a745",
-        "red": "#dc3545",
-        "purple": "#9b59b6",
-        "orange": "#e67e22",
-        "text": "#ffffff",
-        "text_secondary": "#cdeeff",
-        "border": "#1E7890",
-        "hover": "#1a2a4a",
-        "glow": "#46DCFF",
-    },
-    "light": {
-        "name": "Light",
-        "bg": "#f0f4f8",
-        "panel_bg": "#ffffff",
-        "cyan": "#0d47a1",
-        "cyan_dim": "#1a73e8",
-        "amber": "#f57c00",
-        "green": "#2e7d32",
-        "red": "#c62828",
-        "purple": "#6a1b9a",
-        "orange": "#e65100",
-        "text": "#1a1a1a",
-        "text_secondary": "#333333",
-        "border": "#b0bec5",
-        "hover": "#e3f2fd",
-        "glow": "#1a73e8",
-    },
-    "paper": {
-        "name": "Paper",
-        "bg": "#fdf6e3",
-        "panel_bg": "#fffaf0",
-        "cyan": "#2c3e50",
-        "cyan_dim": "#34495e",
-        "amber": "#d4a017",
-        "green": "#2e7d32",
-        "red": "#c62828",
-        "purple": "#4a148c",
-        "orange": "#e65100",
-        "text": "#1a1a1a",
-        "text_secondary": "#4a4a4a",
-        "border": "#bdc3c7",
-        "hover": "#f5f0e8",
-        "glow": "#34495e",
+    "champagne": {
+        "name": "Champagne",
+        "bg": "#F4D77B",
+        "panel_bg": "#FFF8E7",
+        "cyan": "#0B0A08",
+        "cyan_dim": "#1D1810",
+        "amber": "#D4AF37",
+        "gold": "#D4AF37",
+        "green": "#0B0A08",
+        "red": "#8B0000",
+        "purple": "#1D1810",
+        "orange": "#D4AF37",
+        "text": "#0B0A08",
+        "text_secondary": "#B8AE9C",
+        "border": "#0B0A08",
+        "hover": "#E8DFC8",
+        "glow": "#D4AF37",
+        "accent": "#0B0A08",
+        "subtle": "#B8AE9C",
     }
 }
 
 
-def apply_theme(window, theme_name="sunset_gold"):
+def apply_theme(window, theme_name="luxury_celestial"):
     """Apply a theme to the application"""
-    theme = THEMES.get(theme_name, THEMES["sunset_gold"])
+    theme = THEMES.get(theme_name, THEMES["luxury_celestial"])
     
     window.setStyleSheet(f"""
         QMainWindow, QWidget {{
@@ -152,6 +138,7 @@ def apply_theme(window, theme_name="sunset_gold"):
         }}
         QLabel, QGroupBox {{
             color: {theme['text']};
+            font-family: 'Inter', sans-serif;
         }}
         QTabWidget::pane {{
             background-color: {theme['panel_bg']};
@@ -160,14 +147,15 @@ def apply_theme(window, theme_name="sunset_gold"):
         }}
         QTabBar::tab {{
             background-color: {theme['panel_bg']};
-            color: {theme['cyan']};
+            color: {theme['text_secondary']};
             padding: 10px 20px;
-            font-family: Consolas, monospace;
+            font-family: 'Inter', sans-serif;
             font-size: 12px;
         }}
         QTabBar::tab:selected {{
             background-color: {theme['cyan']};
             color: {theme['bg']};
+            font-weight: bold;
         }}
         QTabBar::tab:hover {{
             background-color: {theme['hover']};
@@ -179,7 +167,7 @@ def apply_theme(window, theme_name="sunset_gold"):
             border: 1px solid {theme['border']};
             border-radius: 6px;
             padding: 8px;
-            font-family: Consolas, monospace;
+            font-family: 'Inter', sans-serif;
         }}
         QLineEdit:focus, QComboBox:focus, QDateEdit:focus {{
             border: 2px solid {theme['cyan']};
@@ -190,13 +178,14 @@ def apply_theme(window, theme_name="sunset_gold"):
             border: 1px solid {theme['border']};
             border-radius: 6px;
             padding: 10px;
+            font-family: 'Inter', sans-serif;
         }}
         QPushButton {{
             background-color: {theme['cyan']};
             color: {theme['bg']};
             border-radius: 8px;
             padding: 12px;
-            font-family: Consolas, monospace;
+            font-family: 'Inter', sans-serif;
             font-weight: bold;
         }}
         QPushButton:hover {{
@@ -218,6 +207,7 @@ def apply_theme(window, theme_name="sunset_gold"):
         QMenuBar {{
             background-color: {theme['panel_bg']};
             color: {theme['cyan']};
+            font-family: 'Inter', sans-serif;
         }}
         QMenuBar::item:selected {{
             background-color: {theme['hover']};
@@ -226,6 +216,7 @@ def apply_theme(window, theme_name="sunset_gold"):
             background-color: {theme['panel_bg']};
             color: {theme['text']};
             border: 1px solid {theme['border']};
+            font-family: 'Inter', sans-serif;
         }}
         QMenu::item:selected {{
             background-color: {theme['hover']};
@@ -233,17 +224,19 @@ def apply_theme(window, theme_name="sunset_gold"):
         QStatusBar {{
             background-color: {theme['panel_bg']};
             color: {theme['cyan']};
+            font-family: 'Inter', sans-serif;
         }}
         QGroupBox {{
             color: {theme['cyan']};
             border: 1px solid {theme['border']};
             border-radius: 8px;
             padding: 10px;
-            font-family: Consolas, monospace;
+            font-family: 'Inter', sans-serif;
             font-weight: bold;
         }}
         QCheckBox {{
             color: {theme['text']};
+            font-family: 'Inter', sans-serif;
         }}
         QScrollBar:vertical {{
             background-color: {theme['panel_bg']};
@@ -279,13 +272,14 @@ def apply_theme(window, theme_name="sunset_gold"):
         }}
         QMessageBox QLabel {{
             color: {theme['text']};
+            font-family: 'Inter', sans-serif;
         }}
         QMessageBox QPushButton {{
             background-color: {theme['cyan']};
             color: {theme['bg']};
             border-radius: 6px;
             padding: 8px 16px;
-            font-family: Consolas, monospace;
+            font-family: 'Inter', sans-serif;
             font-weight: bold;
         }}
         QMessageBox QPushButton:hover {{
@@ -308,10 +302,36 @@ def apply_theme(window, theme_name="sunset_gold"):
             border: 1px solid {theme['border']};
             border-radius: 6px;
             padding: 4px;
+            font-family: 'Inter', sans-serif;
         }}
         QListWidget::item:selected, QTreeWidget::item:selected {{
             background-color: {theme['hover']};
             color: {theme['cyan']};
+        }}
+        QComboBox QAbstractItemView {{
+            background-color: {theme['panel_bg']};
+            color: {theme['text']};
+            border: 1px solid {theme['border']};
+            selection-background-color: {theme['hover']};
+            font-family: 'Inter', sans-serif;
+        }}
+        QLabel#title_label {{
+            font-family: 'Cinzel', serif;
+            font-size: 28px;
+            font-weight: bold;
+            letter-spacing: 4px;
+            color: {theme['cyan']};
+        }}
+        QLabel#tagline_label {{
+            font-family: 'Cormorant Garamond', serif;
+            font-style: italic;
+            font-size: 14px;
+            color: {theme['text_secondary']};
+        }}
+        QLabel#heading_label {{
+            font-family: 'Cinzel', serif;
+            font-size: 16px;
+            color: {theme['gold']};
         }}
     """)
 
@@ -321,6 +341,6 @@ def get_theme_names():
     return list(THEMES.keys())
 
 
-def get_theme_colors(theme_name="sunset_gold"):
+def get_theme_colors(theme_name="luxury_celestial"):
     """Get colors for a specific theme"""
-    return THEMES.get(theme_name, THEMES["sunset_gold"])
+    return THEMES.get(theme_name, THEMES["luxury_celestial"])

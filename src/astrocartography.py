@@ -3,9 +3,6 @@ Astrocartography - Astrological Geography
 Finding favorable locations based on birth chart
 """
 
-import math
-from datetime import datetime
-
 class Astrocartographer:
     """Calculate favorable locations based on astrology"""
     
@@ -34,7 +31,6 @@ class Astrocartographer:
         """Get locations good for career"""
         locations = []
         
-        # Look at 10th house (career) and Sun
         for planet in ["sun", "saturn", "mercury", "jupiter"]:
             if planet in self.planet_positions:
                 p = self.planet_positions[planet]
@@ -47,13 +43,12 @@ class Astrocartographer:
                         "reason": f"{planet.capitalize()} in favorable house {p.house} for career"
                     })
         
-        return locations[:5]
+        return locations
     
     def _get_marriage_locations(self) -> list:
         """Get locations good for marriage"""
         locations = []
         
-        # Look at 7th house (marriage) and Venus
         if "venus" in self.planet_positions:
             ven = self.planet_positions["venus"]
             locations.append({
@@ -64,7 +59,6 @@ class Astrocartographer:
                 "reason": "Venus influences relationships and marriage"
             })
         
-        # Jupiter also good for marriage
         if "jupiter" in self.planet_positions:
             jup = self.planet_positions["jupiter"]
             if jup.house in [1, 5, 7, 9]:
@@ -76,13 +70,12 @@ class Astrocartographer:
                     "reason": "Jupiter in 7th house indicates good marriage"
                 })
         
-        return locations[:5]
+        return locations
     
     def _get_success_locations(self) -> list:
         """Get locations good for overall success"""
         locations = []
         
-        # Look at 1st, 5th, 9th, 10th houses
         for planet in ["sun", "jupiter", "mars"]:
             if planet in self.planet_positions:
                 p = self.planet_positions[planet]
@@ -95,13 +88,12 @@ class Astrocartographer:
                         "reason": f"{planet.capitalize()} in house {p.house} brings success"
                     })
         
-        return locations[:5]
+        return locations
     
     def _get_spiritual_locations(self) -> list:
         """Get locations good for spiritual growth"""
         locations = []
         
-        # Look at 12th house and Ketu
         if "ketu" in self.planet_positions:
             ket = self.planet_positions["ketu"]
             locations.append({
@@ -112,7 +104,6 @@ class Astrocartographer:
                 "reason": "Ketu represents spiritual inclinations"
             })
         
-        # Look at 12th house
         for planet in ["moon", "jupiter"]:
             if planet in self.planet_positions:
                 p = self.planet_positions[planet]
@@ -125,13 +116,12 @@ class Astrocartographer:
                         "reason": f"{planet.capitalize()} in 12th house for spirituality"
                     })
         
-        return locations[:5]
+        return locations
     
     def _get_wealth_locations(self) -> list:
         """Get locations good for wealth"""
         locations = []
         
-        # Look at 2nd and 11th houses
         for planet in ["jupiter", "venus"]:
             if planet in self.planet_positions:
                 p = self.planet_positions[planet]
@@ -144,13 +134,12 @@ class Astrocartographer:
                         "reason": f"{planet.capitalize()} in wealth house {p.house}"
                     })
         
-        return locations[:5]
+        return locations
     
     def _get_education_locations(self) -> list:
         """Get locations good for education"""
         locations = []
         
-        # Look at 5th house and Mercury
         if "mercury" in self.planet_positions:
             mer = self.planet_positions["mercury"]
             locations.append({
@@ -161,7 +150,6 @@ class Astrocartographer:
                 "reason": "Mercury represents learning and communication"
             })
         
-        # Jupiter also good for education
         if "jupiter" in self.planet_positions:
             jup = self.planet_positions["jupiter"]
             if jup.house in [1, 5, 9]:
@@ -173,7 +161,7 @@ class Astrocartographer:
                     "reason": "Jupiter in 5th/9th house for education"
                 })
         
-        return locations[:5]
+        return locations
     
     def _get_direction(self, sign_index: int) -> str:
         """Get direction based on sign"""
@@ -212,19 +200,20 @@ class Astrocartographer:
             "Chicago": (41.8781, -87.6298),
             "Boston": (42.3601, -71.0589),
         }
-        
         return city_coordinates
     
     def recommend_cities(self, category="career") -> list:
         """Recommend cities for a specific category"""
-        locations = self.get_favorable_locations(category)
+        # Get locations for the category
+        locations_dict = self.get_favorable_locations(category)
         city_coords = self.get_world_map_data()
         
         recommendations = []
+        # Get the locations list safely
+        locations_list = locations_dict.get(category, []) if isinstance(locations_dict, dict) else []
         
-        for loc in locations[:10]:
+        for loc in locations_list[:10]:
             direction = loc.get("direction", "")
-            # Map direction to approximate cities
             direction_cities = {
                 "East": ["Tokyo", "Shanghai", "Bangkok", "Seoul"],
                 "West": ["Los Angeles", "San Francisco", "Vancouver", "Mexico City"],
@@ -247,4 +236,17 @@ class Astrocartographer:
                         "coordinates": city_coords[city]
                     })
         
-        return recommendations[:10]
+        # Remove duplicates
+        seen = set()
+        unique_recommendations = []
+        for r in recommendations:
+            key = r["city"]
+            if key not in seen:
+                seen.add(key)
+                unique_recommendations.append(r)
+        
+        return unique_recommendations[:10]
+
+
+# For backward compatibility
+Astrocartographer = Astrocartographer
