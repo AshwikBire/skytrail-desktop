@@ -1,76 +1,264 @@
 # SkyTrail Desktop
 
-Vedic & Western astrology app with a holographic UI, bilingual (English/Hindi),
-fully offline — no API keys, no cloud costs. Uses the same local Ollama model
-as your Jarvis project for AI-generated readings.
+Vedic and Western Astrology desktop application with AI-powered readings, bilingual English/Hindi support, Panchang, Kundali Milan, Astrocartography, planetary transits, and a holographic user interface.
 
-## What it does
-- Computes real birth charts (planetary positions, ascendant, nakshatra for Vedic)
-  using `pyswisseph` (Swiss Ephemeris) — accurate offline, no downloaded data files needed
-- Toggle between **Vedic** (sidereal, Lahiri ayanamsa) and **Western** (tropical) systems
-- Toggle between **English** and **Hindi** for the whole UI, chart labels, and AI reading
-- Holographic zodiac wheel — planets glow at their actual positions, matching the
-  Jarvis visual style
-- AI-generated personality/life-theme reading from the local model, in the chosen language
-- Quick-pick presets for Pune, Amravati, Mumbai, Delhi, Bengaluru (lat/long/timezone)
+## Developer
 
-## Requirements
-Same as Jarvis: Python 3.12, Ollama installed with `qwen2.5:3b` pulled.
-If you already set these up for Jarvis, you're 90% done — this app reuses that.
+Ashwik Bire
 
-## Setup (if you haven't done Jarvis setup already)
-1. Install Python 3.12 from python.org (check "Add to PATH")
-2. Install Ollama from ollama.com/download
-3. `ollama pull qwen2.5:3b` (skip if already pulled for Jarvis)
+LinkedIn: https://linkedin.com/in/ashwik-bire-b2a000186
 
-## Running it
-Double-click `run_skytrail.bat` — it handles venv creation, dependency install,
-and Ollama check automatically, every time. Or from a terminal:
-```
-run_skytrail.bat
-```
+Portfolio: https://ashwikbire.github.io/My-Portfolio/
 
-## Using the app
-1. Enter name, birth date (DD-MM-YYYY), birth time (24hr HH:MM)
-2. Enter latitude/longitude/timezone offset, or pick a preset city
-3. Choose Vedic or Western at the top
-4. Choose EN or हिं for language
-5. Click Generate — the wheel populates instantly, the AI reading takes a
-   few seconds (same local model speed as Jarvis)
+GitHub: https://github.com/AshwikBire
 
-## Two AI reading sources, switchable
-- **AI: LOCAL** — Ollama + qwen2.5:3b, offline, free forever
-- **AI: NEMOTRON** — NVIDIA's free cloud API, needs internet, sharper readings
+Project Repository: https://github.com/AshwikBire/skytrail-desktop
 
-Toggle with the buttons in the top header, next to the language toggle.
+## Screenshots
 
-### One-time Nemotron setup (optional)
-1. Get a free key at **build.nvidia.com** (no card needed)
-2. Rename `.env.example` to `.env` in the `skytrail-desktop` folder
-3. Paste your key in, replacing `nvapi-your-key-here`
-4. If you already set this up for Jarvis, you can reuse the same key — just
-   copy your Jarvis `.env` file into this folder too
+The screenshots below are loaded directly from the `screenshots` folder in this repository.
 
-**Never share your API key in chat — it stays local to your PC.**
+### Main Interface
 
-## Notes on accuracy
-- Uses pyswisseph's built-in Moshier calculation model — no need to download
-  ephemeris data files, works fully offline out of the box, accurate to a
-  fraction of a degree for personal chart reading (not observatory-grade,
-  but well within astrology practice standards)
-- Vedic ascendant uses whole-sign houses; Western uses Placidus
-- Rahu is the mean lunar node; Ketu is calculated as exactly opposite Rahu
+![SkyTrail Main Interface](screenshots/main-interface.png)
 
-## Project structure
-```
+### Holographic Wheel
+
+![SkyTrail Holographic Wheel](screenshots/holographic-wheel.png)
+
+### Predictions
+
+![SkyTrail Predictions](screenshots/predictions.png)
+
+### Panchang
+
+![SkyTrail Panchang](screenshots/panchang.png)
+
+### Kundali Milan
+
+![SkyTrail Kundali Milan](screenshots/kundali-milan.png)
+
+### AI Reading
+
+![SkyTrail AI Reading](screenshots/ai-reading.png)
+
+### Themes
+
+![SkyTrail Themes](screenshots/themes.png)
+
+### PDF Report
+
+![SkyTrail PDF Report](screenshots/pdf-report.png)
+
+## Features
+
+### Core Astrology
+
+- Vedic astrology using sidereal calculations
+- Western astrology using tropical calculations
+- Lahiri, Raman, KP, True Citra and Fagan-Bradley ayanamsa options
+- Navamsa D9 chart
+- Vimshottari Dasha system
+- 50+ Vedic Yoga detection
+- House and planetary calculations
+
+### Predictions
+
+- Face reading
+- Career prediction
+- Marriage prediction
+- Children prediction
+- Success prediction
+- Personality analysis
+
+### Astrocartography
+
+- Favorable locations
+- Direction analysis
+- Career and success locations
+- Worldwide recommendations
+
+### Panchang
+
+- Tithi
+- Vara
+- Nakshatra
+- Yoga
+- Karana
+- Sunrise and sunset
+- Rahu Kaal
+- Gulika Kaal
+- Yamaganda
+
+### Muhurta
+
+- Wedding dates
+- Business dates
+- Travel dates
+- Recommended upcoming dates
+
+### Transits
+
+- Current planetary transits
+- House-based transit effects
+- Daily and weekly analysis
+- Yearly forecasts
+
+### Kundali Milan
+
+- 36-point Ashtakoot matching
+- Varna
+- Vashya
+- Tara
+- Yoni
+- Graha Maitri
+- Gana
+- Bhakoot
+- Nadi
+- Compatibility analysis
+
+### AI
+
+- Local AI with Ollama
+- qwen2.5:3b support
+- Optional NVIDIA Nemotron cloud AI
+- English and Hindi AI readings
+- AI fallback support
+
+### User Interface
+
+- Holographic astrology wheel
+- Multiple visual themes
+- English and Hindi interface
+- PDF report export
+- Screenshot capture
+
+## Technology Stack
+
+| Technology | Purpose |
+|---|---|
+| Python 3.12 | Application development |
+| PyQt6 | Desktop interface |
+| Swiss Ephemeris | Astrology calculations |
+| PyEphem | Ephemeris fallback |
+| Ollama | Local AI |
+| NVIDIA Nemotron | Optional cloud AI |
+| ReportLab | PDF reports |
+
+## Project Structure
+
+```text
 skytrail-desktop/
+├── src/
+├── screenshots/
 ├── requirements.txt
 ├── run_skytrail.bat
 ├── README.md
-└── src/
-    ├── main.py               # App window, form, toggles, wiring
-    ├── astro_calc.py         # Chart computation (pyswisseph)
-    ├── holographic_wheel.py  # Custom-painted zodiac wheel widget
-    ├── horoscope_ai.py       # Local AI reading generation
-    └── translations.py       # English/Hindi label dictionary
+├── LICENSE
+└── .gitignore
 ```
+
+## Installation
+
+### Requirements
+
+- Windows 10/11, macOS or Linux
+- Python 3.12 or higher
+- Ollama for local AI
+- Optional NVIDIA Nemotron API key
+
+### Setup
+
+```bash
+git clone https://github.com/AshwikBire/skytrail-desktop.git
+cd skytrail-desktop
+```
+
+Create a virtual environment:
+
+```bash
+python -m venv venv
+```
+
+Windows:
+
+```bash
+venv\Scripts\activate
+```
+
+macOS/Linux:
+
+```bash
+source venv/bin/activate
+```
+
+Install dependencies:
+
+```bash
+pip install -r requirements.txt
+```
+
+For local AI:
+
+```bash
+ollama pull qwen2.5:3b
+```
+
+Run the application:
+
+```bash
+python src/main.py
+```
+
+On Windows, you can also use:
+
+```bash
+run_skytrail.bat
+```
+
+## AI Configuration
+
+### Ollama
+
+Install Ollama and download the supported model:
+
+```bash
+ollama pull qwen2.5:3b
+```
+
+The local AI option allows readings without sending prompts to a cloud AI service.
+
+### NVIDIA Nemotron
+
+Nemotron can be configured through the application's API settings when an internet connection and valid API key are available.
+
+## Contributing
+
+Contributions, improvements and bug reports are welcome.
+
+1. Fork the repository.
+2. Create a feature branch.
+3. Make your changes.
+4. Test the application.
+5. Commit your changes.
+6. Open a Pull Request.
+
+## License
+
+Distributed under the MIT License. See the `LICENSE` file for details.
+
+## Disclaimer
+
+SkyTrail Desktop is intended for educational and entertainment purposes.
+
+Astrology readings should not be treated as professional medical, financial, legal or other professional advice. Important life decisions should be made using appropriate professional guidance.
+
+## Contact and Links
+
+LinkedIn: https://linkedin.com/in/ashwik-bire-b2a000186
+
+Portfolio: https://ashwikbire.github.io/My-Portfolio/
+
+GitHub: https://github.com/AshwikBire
+
+SkyTrail Desktop: https://github.com/AshwikBire/skytrail-desktop
