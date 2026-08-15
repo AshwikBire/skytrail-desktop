@@ -1,6 +1,6 @@
 # SkyTrail Desktop
 
-Vedic and Western Astrology desktop application with AI-powered readings, bilingual English/Hindi support, Panchang, Kundali Milan, Astrocartography, planetary transits, and a holographic user interface.
+Vedic and Western Astrology desktop application with AI-powered readings, bilingual English/Hindi support, Panchang, Kundali matching, Astrocartography, planetary transits, Yogas and a holographic user interface.
 
 ## Developer
 
@@ -16,39 +16,55 @@ Project Repository: https://github.com/AshwikBire/skytrail-desktop
 
 ## Screenshots
 
-The screenshots below are loaded directly from the `screenshots` folder in this repository.
+All screenshots below are loaded from the `Screenshots` folder in this repository.
 
 ### Main Interface
 
-![SkyTrail Main Interface](screenshots/main-interface.png)
-
-### Holographic Wheel
-
-![SkyTrail Holographic Wheel](screenshots/holographic-wheel.png)
-
-### Predictions
-
-![SkyTrail Predictions](screenshots/predictions.png)
-
-### Panchang
-
-![SkyTrail Panchang](screenshots/panchang.png)
-
-### Kundali Milan
-
-![SkyTrail Kundali Milan](screenshots/kundali-milan.png)
+![SkyTrail Main Interface](Screenshots/Main%20Interface.png)
 
 ### AI Reading
 
-![SkyTrail AI Reading](screenshots/ai-reading.png)
+![SkyTrail AI Reading](Screenshots/AI%20Reading.png)
+
+### Predictions
+
+![SkyTrail Predictions](Screenshots/Predictions.png)
+
+### Panchang
+
+![SkyTrail Panchang](Screenshots/Panchang.png)
+
+### Yogas
+
+![SkyTrail Yogas](Screenshots/Yogas.png)
+
+### Transits
+
+![SkyTrail Transits](Screenshots/Transits.png)
+
+### Muhurta
+
+![SkyTrail Muhurta](Screenshots/Muhurta.png)
+
+### Matchmaking
+
+![SkyTrail Matchmaking](Screenshots/Matchmaking.png)
+
+### Astrocartography
+
+![SkyTrail Astrocartography](Screenshots/Astrocartography.png)
+
+### Ayanamsa
+
+![SkyTrail Ayanamsa](Screenshots/Ayanmasa.png)
 
 ### Themes
 
-![SkyTrail Themes](screenshots/themes.png)
+![SkyTrail Themes](Screenshots/Themes.png)
 
-### PDF Report
+### API Key Management
 
-![SkyTrail PDF Report](screenshots/pdf-report.png)
+![SkyTrail API Key Management](Screenshots/API%20Key%20Management.png)
 
 ## Features
 
@@ -56,11 +72,11 @@ The screenshots below are loaded directly from the `screenshots` folder in this 
 
 - Vedic astrology using sidereal calculations
 - Western astrology using tropical calculations
-- Lahiri, Raman, KP, True Citra and Fagan-Bradley ayanamsa options
+- Multiple ayanamsa options
 - Navamsa D9 chart
 - Vimshottari Dasha system
 - 50+ Vedic Yoga detection
-- House and planetary calculations
+- Planetary and house calculations
 
 ### Predictions
 
@@ -104,7 +120,7 @@ The screenshots below are loaded directly from the `screenshots` folder in this 
 - Daily and weekly analysis
 - Yearly forecasts
 
-### Kundali Milan
+### Kundali Matching
 
 - 36-point Ashtakoot matching
 - Varna
@@ -117,6 +133,16 @@ The screenshots below are loaded directly from the `screenshots` folder in this 
 - Nadi
 - Compatibility analysis
 
+### Yogas
+
+- 50+ Vedic Yoga detection
+- Raj Yogas
+- Dhana Yogas
+- Education Yogas
+- Marriage Yogas
+- Career Yogas
+- Spiritual Yogas
+
 ### AI
 
 - Local AI with Ollama
@@ -127,11 +153,12 @@ The screenshots below are loaded directly from the `screenshots` folder in this 
 
 ### User Interface
 
-- Holographic astrology wheel
+- Holographic astrology interface
 - Multiple visual themes
 - English and Hindi interface
 - PDF report export
 - Screenshot capture
+- API key management
 
 ## Technology Stack
 
@@ -150,7 +177,19 @@ The screenshots below are loaded directly from the `screenshots` folder in this 
 ```text
 skytrail-desktop/
 ├── src/
-├── screenshots/
+├── Screenshots/
+│   ├── AI Reading.png
+│   ├── API Key Management.png
+│   ├── Astrocartography.png
+│   ├── Ayanmasa.png
+│   ├── Main Interface.png
+│   ├── Matchmaking.png
+│   ├── Muhurta.png
+│   ├── Panchang.png
+│   ├── Predictions.png
+│   ├── Themes.png
+│   ├── Transits.png
+│   └── Yogas.png
 ├── requirements.txt
 ├── run_skytrail.bat
 ├── README.md
@@ -226,7 +265,7 @@ Install Ollama and download the supported model:
 ollama pull qwen2.5:3b
 ```
 
-The local AI option allows readings without sending prompts to a cloud AI service.
+The local AI option allows readings using a locally running model.
 
 ### NVIDIA Nemotron
 
